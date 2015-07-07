@@ -6,6 +6,8 @@ $().ready(function(){
     $(".type-selected-container i").click(function(){
         closeType(); 
     });
+    getCurrentLocation();
+    mapHover();
 });
 
 function cardSelected(selected, position){
@@ -30,14 +32,14 @@ function cardSelected(selected, position){
     }
     
     icon_container.addClass(icon);
-    
+    $("#filter").fadeIn("slow");
     loadJson(file,type);
 }
 
 function closeType(){
     $(".type-selected-container").hide();
     $(".type-card-container > div").attr("style","");
-    //$(".type-card-container > div").stop(true,true).animate({width:auto,height:auto},1000,function(){$(this).show();});
+    $("#filter").fadeOut("slow");
 }
 
 function loadJson(file,type){
@@ -53,3 +55,86 @@ function loadJson(file,type){
         }).appendTo( "body" );
     });   
 }
+function getCurrentLocation(){
+    $.get("http://ipinfo.io", function(response) {
+        loadCurrentLocation(response.country, response.region);
+    }, "jsonp");   
+}
+function loadCurrentLocation(country, region){
+    $.getJSON( "data/Maps/" + country + ".json", function( data ) {
+        var info = getObjects(data, "name", region)[0];
+        $("#filter-card-location h4").html(info["name-real"]);
+        fillRegion(info["short-name"]);
+    });
+}
+function getObjects(obj, key, val) {
+    var objects = [];
+    for (var i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+        if (typeof obj[i] == 'object') {
+            objects = objects.concat(getObjects(obj[i], key, val));
+        } else if (i == key && obj[key] == val) {
+            objects.push(obj);
+        }
+    }
+    return objects;
+}
+function fillRegion(region){
+    var svgDoc = document.getElementById('filter-map-small').getSVGDocument();
+    if(svgDoc == null)
+    {
+        document.getElementById('filter-map-small').addEventListener('load',function(){
+            var svg = document.getElementById('filter-map-small').contentDocument;
+            svg.getElementById('svg3919').setAttribute("viewBox" ,"120 0 850 850");
+            var paths = svg.getElementsByTagName('path');
+            for (var i = 0; i < paths.length; i++) {
+                if(paths[i].getAttribute("id") == region){
+                    paths[i].setAttribute("selected","true");
+                    paths[i].style.fill = "orange";
+                }
+            }
+        });
+    }
+    else
+    {
+        var svg = document.getElementById('filter-map-small').contentDocument;
+        var paths = svg.getElementsByTagName('path');
+        svg.getElementById('svg3919').setAttribute("viewBox" ,"120 0 850 850");
+        for (var i = 0; i < paths.length; i++) {
+            if(paths[i].getAttribute("id") == region){
+                paths[i].setAttribute("selected","true");
+                paths[i].style.fill = "aquamarine";
+            }
+        }   
+    }
+}
+function mapHover(){
+    document.getElementById('filter-map').addEventListener('load',function(){
+        var svg = document.getElementById('filter-map').contentDocument;
+        var paths = svg.getElementsByTagName('path');
+        for (var i = 0; i < paths.length; i++) {
+            if (window.addEventListener) { //Firefox, Chrome, Safari, IE 10
+                paths[i].addEventListener('mouseover', highlightPath, false);
+                paths[i].addEventListener('mouseout', unhighlightPath, false);
+                paths[i].addEventListener('mousedown', selectPath, false);
+            } else if (window.attachEvent) { //IE < 9
+                paths[i].attachEvent('onmouseover', highlightPath);
+                paths[i].attachEvent('onmouseout', unhighlightPath);
+                paths[i].attachEvent('mousedown', selectPath);
+            }
+        }
+    });
+}
+function highlightPath() {
+    if($(this).attr("selected") != "true")
+        this.style.fill = "green";
+}
+function unhighlightPath() {
+    if($(this).attr("selected") != "true")
+        this.style.fill = "#333333";
+}
+function selectPath(e) {
+    this.setAttribute("selected","true");
+    this.style.fill = "aquamarine";
+}
+

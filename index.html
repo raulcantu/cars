@@ -27,7 +27,7 @@
     
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <div class="body-background"></div>
      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -108,6 +108,55 @@
                 </div>
             </div>
         </section>
+        <section id="filter">
+            <div class="container">
+                <div class="row filter-card-container">
+                    <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="filter-card" id="filter-card-location">
+                            <div style="display:block;">
+                                <h4>Seleccionar Estado</h4>
+                                <!--<svg class="icon" viewBox="0 0 200 200" >
+                                    <use x="-800" y="-450" fill="green" xlink:href="data/Maps/MX.svg#CAM"></use>
+                                </svg>-->
+                                <object data="data/Maps/MX.svg" width="250" height="200" left="100" type="image/svg+xml" id="filter-map-small" />
+                            </div>
+                            <div class="filter-card-big">
+                                <object data="data/Maps/MX.svg" width="500" height="320" type="image/svg+xml" id="filter-map" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="filter-card" id="filter-card-make">
+                            <div style="display:block;">
+                                <h4>Seleccionar Estado</h4>
+                                <!--<svg class="icon" viewBox="0 0 200 200" >
+                                    <use x="-800" y="-450" fill="green" xlink:href="data/Maps/MX.svg#CAM"></use>
+                                </svg>-->
+                                <object data="data/Maps/MX.svg" width="250" height="200" left="100" type="image/svg+xml" id="filter-map-small" />
+                            </div>
+                            <div class="filter-card-big">
+                                <object data="data/Maps/MX.svg" width="500" height="320" type="image/svg+xml" id="filter-map" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="filter-card" id="filter-card-model">
+                            <div style="display:block;">
+                                <h4>Seleccionar Estado</h4>
+                                <!--<svg class="icon" viewBox="0 0 200 200" >
+                                    <use x="-800" y="-450" fill="green" xlink:href="data/Maps/MX.svg#CAM"></use>
+                                </svg>-->
+                                <object data="data/Maps/MX.svg" width="250" height="200" left="100" type="image/svg+xml" id="filter-map-small" />
+                            </div>
+                            <div class="filter-card-big">
+                                <object data="data/Maps/MX.svg" width="500" height="320" type="image/svg+xml" id="filter-map" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     </main>
     
     <script src="scripts/Framework/jquery-2.1.4.js"></script>
