@@ -11,11 +11,11 @@ $().ready(function(){
 function cardSelected(selected, position){
     var type = selected.find("span").html();
     var icon_container = $(".type-selected-container").find(".icon-type");
-    $(".type-card-container > div").stop(true,true).animate({width:0,height:0},1000,function(){$(this).hide();});
+    $(".type-card-container > div").stop(true,true).animate({width:0,height:0},500,function(){$(this).hide();});
     $(".type-selected-container").show();
-    $(".type-selected-container").stop(true,true).animate({width:"20%",height:"7rem"},1000,function(){
+    $(".type-selected-container").stop(true,true).animate({width:"20%",height:"7rem"},500,function(){
         $(this).find("h4").html(type);
-        $(".type-selected-container").stop(true,true).animate({width:"100%",height:"10rem"},1000);
+        $(".type-selected-container").stop(true,true).animate({width:"100%",height:"10rem"},500);
     });
     var icon = "fa-car";
     switch(type){
@@ -36,7 +36,8 @@ function cardSelected(selected, position){
 
 function closeType(){
     $(".type-selected-container").hide();
-    $(".type-card-container > div").stop(true,true).animate({width:auto,height:auto},1000,function(){$(this).show();});
+    $(".type-card-container > div").attr("style","");
+    //$(".type-card-container > div").stop(true,true).animate({width:auto,height:auto},1000,function(){$(this).show();});
 }
 
 function loadJson(file,type){
