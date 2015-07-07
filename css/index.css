@@ -77,6 +77,7 @@ main{
 .type-selected-container{
     height:0;
     width:0;
+    display: none;
 }
 .type-selected-container > div{
     transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -87,14 +88,20 @@ main{
     border-radius: 2px;
     background-color:rgba(255,255,255,.8);
 }
+.type-selected-container .icon-type{
+    float: left;
+    font-size: 2rem;
+}
 .type-selected-container h4{
     display: initial;
+    font-size: 2rem;
+    margin-left: 1rem;
 }
-.type-selected-container i{
+.type-selected-container .close{
     float: right;
     font-size: 2rem;
     cursor: pointer;
 }
-.type-selected-container i:hover{
+.type-selected-container .close:hover{
     color:tomato;
 }
