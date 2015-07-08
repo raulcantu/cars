@@ -137,7 +137,7 @@ function btnEvents(){
     var filter_open = false;
     $(".body-hide-popup").click(function(){
         if(filter_open){
-            filter_open.find(".filter-card-big").fadeOut();
+            filter_open.find(".filter-card-big").fadeOut(200);
             $(".body-hide-popup").hide();
         }
     });
@@ -145,7 +145,7 @@ function btnEvents(){
         $(".body-hide-popup").show();
         var filter = $("#" + $(this).attr("vid"));
         filter.stop(true,true).animate({"z-index":3},200,function(){
-            filter.find(".filter-card-big").fadeIn();
+            filter.find(".filter-card-big").fadeIn(200);
         });
         filter_open = filter;
     });
