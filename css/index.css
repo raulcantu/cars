@@ -112,6 +112,9 @@ main{
 #filter{
     display: none;
 }
+.filter-card-small{
+    display: block;
+}
 .filter-card{
     transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 0.2s;
@@ -120,6 +123,8 @@ main{
     margin: 1.2rem 0;
     border-radius: 2px;
     background-color:rgba(255,255,255,.8);
+    position: relative;
+    z-index:1;
 }
 .filter-card h4{
     border-bottom: 1px solid aquamarine;
@@ -131,7 +136,49 @@ main{
     padding-bottom: 10px;
     width: 100%;
 }
-/*Filter Location*/
-#filter-card-location .filter-card-big{
-   /* display: none;*/
+.filter-card-big{
+    display: none;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    padding: 16px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    margin: 1.2rem 0;
+    border-radius: 2px;
+    background-color:rgba(255,255,255,1);
+    position: absolute;
+    z-index:2;
+    top: 0;
 }
+.btns-container{
+    position: absolute;
+    right: 5px;
+    margin-top: -45px;
+}
+.btn-div{
+    width: 55.5px;
+    height: 55.5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    -o-transition: .2s ease-out;
+    -ms-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    display: table;    
+}
+.btn-div i{
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;    
+}
+.btn-edit{
+    background-color: #F44336 !important;
+    font-size: 25px;
+}
+/*Filter Location*/
