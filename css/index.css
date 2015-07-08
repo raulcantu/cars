@@ -23,6 +23,17 @@ main{
     top:50px;
     left:0;
 }
+.body-hide-popup{
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    margin:0;
+    background-color: rgba(0,0,0,.5);
+    width:100%;
+    height:100%;
+    z-index:2;
+}
 
 /*NAV*/
 .navbar-default {
@@ -101,11 +112,11 @@ main{
     font-size: 3rem;
     cursor: pointer;
     position: absolute;
-    right: 20px;
-    top: 12px;
+    right: 30px;
+    top: 24px;
 }
 .type-selected-container .icon-close:hover{
-    color:tomato;
+    color:#F44336;
 }
 
 /*Filter*/

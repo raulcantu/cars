@@ -134,15 +134,19 @@ function selectPath(e) {
     this.style.fill = "aquamarine";
 }
 function btnEvents(){
+    var filter_open = false;
+    $(".body-hide-popup").click(function(){
+        if(filter_open){
+            filter_open.find(".filter-card-big").fadeOut();
+            $(".body-hide-popup").hide();
+        }
+    });
     $(".filter-card .btn-edit").click(function(){
+        $(".body-hide-popup").show();
         var filter = $("#" + $(this).attr("vid"));
         filter.stop(true,true).animate({"z-index":3},200,function(){
-           //filter.find(".filter-card-small").hide();  
-            //filter.stop(true,true).animate({height:"100%",width:"100%"},200,function(){
-                filter.find(".filter-card-big").fadeIn();
-            //});
+            filter.find(".filter-card-big").fadeIn();
         });
-       
-        
+        filter_open = filter;
     });
 }
