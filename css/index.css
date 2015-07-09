@@ -159,11 +159,17 @@ main{
     position: absolute;
     z-index:2;
     top: 0;
+    width: 800px;
+}
+.filter-card-big .btns-container{
+    right: 20px !important;
+    bottom: 10px !important;
 }
 .btns-container{
     position: absolute;
     right: 5px;
-    margin-top: -45px;
+    display: table;
+    bottom: 5px;
 }
 .btn-div{
     width: 55.5px;
@@ -181,15 +187,69 @@ main{
     cursor: pointer;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 50%;
-    display: table;    
-}
-.btn-div i{
     vertical-align: middle;
     display: table-cell;
+    text-align: center;     
+    margin: 0 5px;
+}
+.btn-div i{
     text-align: center;    
+}
+.btn-sep{
+    display:table-cell;
+    width: 10px;
 }
 .btn-edit{
     background-color: #F44336 !important;
     font-size: 25px;
 }
+.btn-close{
+    background-color: #F44336 !important;
+    font-size: 25px;
+}
+.btn-check{
+    background-color: lightgreen;
+    font-size: 25px;
+}
 /*Filter Location*/
+.filter-map{
+    display: table-cell;
+    position: relative;
+}
+.regions-selected-container{
+    display: table-cell;
+    position: relative;
+    vertical-align: top;
+    width: 300px;
+}
+.regions-selected-title{
+    display: table-cell;
+    width: 300px;
+    text-align: center;
+}
+.regions-selected-container ul{
+    list-style: none;
+    padding: 0;
+    overflow-y: scroll;
+    max-height: 300px;
+}
+.regions-selected-container li,.regions-selected-title{
+    padding: 5px 0;   
+}
+.regions-selected-title{
+    color:#333;
+    font-weight: bold;
+    background-color: aquamarine;
+    border-radius:3px 3px 0px 0px;
+}
+.region-selected{
+    color:#333;
+    font-weight: bold;
+    background-color: gainsboro;
+}
+.region-selected:not(:last-of-type){
+    border-bottom: 1px solid lightgray;
+}
+.region-selected:last-of-type{
+    border-radius:0px 0px 3px 3px;
+}

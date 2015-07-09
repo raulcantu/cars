@@ -11,6 +11,8 @@ $().ready(function(){
     btnEvents();
 });
 
+var regions = "";
+
 function cardSelected(selected, position){
     var type = selected.find("span").html();
     var icon_container = $(".type-selected-container").find(".icon-type");
@@ -46,14 +48,14 @@ function closeType(){
 function loadJson(file,type){
     $.getJSON( "../data/" + file + ".json", function( data ) {
         var items = [];
-        $.each( data, function( key, val ) {
+        /*$.each( data, function( key, val ) {
             items.push( "<li id='" + key + "'>" + val + "</li>" );
         });
 
         $( "<ul/>", {
             "class": "my-new-list",
             html: items.join( "" )
-        }).appendTo( "body" );
+        }).appendTo( "body" );*/
     });   
 }
 function getCurrentLocation(){
@@ -63,9 +65,12 @@ function getCurrentLocation(){
 }
 function loadCurrentLocation(country, region){
     $.getJSON( "data/Maps/" + country + ".json", function( data ) {
+        regions = data;
         var info = getObjects(data, "name", region)[0];
         $("#filter-card-location h4").html(info["name-real"]);
-        verifySVGMap(info["short-name"]);
+        verifySVGMap(info["short-name"],'filter-map-small');
+        verifySVGMap(info["short-name"],'filter-map');
+        $(".regions-selected-container ul").append("<li class='region-selected'>" + info["name-real"] + "</li>");
     });
 }
 function getObjects(obj, key, val) {
@@ -80,21 +85,21 @@ function getObjects(obj, key, val) {
     }
     return objects;
 }
-function verifySVGMap(region){
-    var svgDoc = document.getElementById('filter-map-small').getSVGDocument();
+function verifySVGMap(region, map){
+    var svgDoc = document.getElementById(map).getSVGDocument();
     if(svgDoc == null)
     {
-        document.getElementById('filter-map-small').addEventListener('load',function(){
-            fillRegion(region);
+        document.getElementById(map).addEventListener('load',function(){
+            fillRegion(region, map);
         });
     }
     else
     {
-        fillRegion(region);
+        fillRegion(region, map);
     }
 }
-function fillRegion(region){
-    var svg = document.getElementById('filter-map-small').contentDocument;
+function fillRegion(region, map){
+    var svg = document.getElementById(map).contentDocument;
     svg.getElementById('svg3919').setAttribute("viewBox" ,"120 0 850 850");
     var paths = svg.getElementsByTagName('path');
     for (var i = 0; i < paths.length; i++) {
@@ -130,6 +135,9 @@ function unhighlightPath() {
         this.style.fill = "#333333";
 }
 function selectPath(e) {
+    console.log(this.id);
+    var this_region = getObjects(regions, "short-name", this.id)[0];
+    $(".regions-selected-container ul").append("<li class='region-selected'>" + this_region["name-real"] + "</li>");
     this.setAttribute("selected","true");
     this.style.fill = "aquamarine";
 }
@@ -145,8 +153,12 @@ function btnEvents(){
         $(".body-hide-popup").show();
         var filter = $("#" + $(this).attr("vid"));
         filter.stop(true,true).animate({"z-index":3},200,function(){
-            filter.find(".filter-card-big").fadeIn(200);
+            filter.find(".filter-card-big").fadeIn(200).css('display','table');
         });
         filter_open = filter;
+    });
+    $(".filter-card-big .btn-close").click(function(){
+        filter_open.find(".filter-card-big").fadeOut(200);
+        $(".body-hide-popup").hide();
     });
 }
