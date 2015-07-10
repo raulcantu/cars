@@ -1,3 +1,4 @@
+    mapHover();
 $().ready(function(){
     $(".type-card").click(function(){ 
         var position = $(this).offset();
@@ -7,7 +8,6 @@ $().ready(function(){
         closeType(); 
     });
     getCurrentLocation();
-    mapHover();
     btnEvents();
 });
 
@@ -110,7 +110,14 @@ function fillRegion(region, map){
     }
 }
 function mapHover(){
+    mouseHoverMap();
     document.getElementById('filter-map').addEventListener('load',function(){
+        mouseHoverMap();
+    });
+}
+function mouseHoverMap(){
+    if($("#filter-map").find("path").length > 0)
+    {
         var svg = document.getElementById('filter-map').contentDocument;
         var paths = svg.getElementsByTagName('path');
         for (var i = 0; i < paths.length; i++) {
@@ -124,7 +131,7 @@ function mapHover(){
                 paths[i].attachEvent('mousedown', selectPath);
             }
         }
-    });
+    }
 }
 function highlightPath() {
     if($(this).attr("selected") != "true")
