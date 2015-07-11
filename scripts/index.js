@@ -12,6 +12,8 @@ $().ready(function(){
 });
 
 var regions = "";
+var tempSelectedRegions = new Array();
+var selectedRegions = new Array();
 
 function cardSelected(selected, position){
     var type = selected.find("span").html();
@@ -70,7 +72,9 @@ function loadCurrentLocation(country, region){
         $("#filter-card-location h4").html(info["name-real"]);
         verifySVGMap(info["short-name"],'filter-map-small');
         verifySVGMap(info["short-name"],'filter-map');
-        $(".regions-selected-container ul").append("<li class='region-selected'>" + info["name-real"] + "</li>");
+        $(".regions-selected-container ul").append("<li class='region-selected' vid='" + info["short-name"] + "'>" + info["name-real"] + "</li>");
+        selectedRegions.push(info["short-name"]);
+        tempSelectedRegions.push(info["short-name"]);
     });
 }
 function getObjects(obj, key, val) {
@@ -103,7 +107,8 @@ function fillRegion(region, map){
     svg.getElementById('svg3919').setAttribute("viewBox" ,"120 0 850 850");
     var paths = svg.getElementsByTagName('path');
     for (var i = 0; i < paths.length; i++) {
-        if(paths[i].getAttribute("id") == region){
+        //if(paths[i].id == region){
+         if($.inArray( paths[i].id, selectedRegions ) >= 0){
             paths[i].setAttribute("selected","true");
             paths[i].style.fill = "aquamarine";
         }
@@ -116,7 +121,8 @@ function mapHover(){
     });
 }
 function mouseHoverMap(){
-    if($("#filter-map").find("path").length > 0)
+    var svgDoc = document.getElementById("filter-map").getSVGDocument();
+    if(svgDoc != null)
     {
         var svg = document.getElementById('filter-map').contentDocument;
         var paths = svg.getElementsByTagName('path');
@@ -141,12 +147,45 @@ function unhighlightPath() {
     if($(this).attr("selected") != "true")
         this.style.fill = "#333333";
 }
+function cleanMap(map){
+    var svg = document.getElementById(map).contentDocument;
+    var paths = svg.getElementsByTagName('path');
+    for (var i = 0; i < paths.length; i++) {
+        paths[i].style.fill = "#333333";
+        paths[i].setAttribute("selected","false");
+    }
+}
+function hidhlightRegions(map, regions){
+    var svg = document.getElementById(map).contentDocument;
+    var paths = svg.getElementsByTagName('path');
+    for (var i = 0; i < paths.length; i++) {
+        if($.inArray( paths[i].id, regions ) >= 0){
+            paths[i].style.fill = "aquamarine";
+            paths[i].setAttribute("selected","true");
+        }
+    }
+}
 function selectPath(e) {
     console.log(this.id);
     var this_region = getObjects(regions, "short-name", this.id)[0];
-    $(".regions-selected-container ul").append("<li class='region-selected'>" + this_region["name-real"] + "</li>");
-    this.setAttribute("selected","true");
-    this.style.fill = "aquamarine";
+    if($.inArray( this_region["short-name"], tempSelectedRegions ) < 0) //Regions unselected
+    {
+        tempSelectedRegions.push(this_region["short-name"]);    
+        $(".regions-selected-container ul").append("<li class='region-selected' vid='" + this_region["short-name"] + "'>" + this_region["name-real"] + "</li>");
+        this.setAttribute("selected","true");
+        this.style.fill = "aquamarine";
+    }
+    else{
+        var temRegions = new Array();
+        temRegions = jQuery.grep(tempSelectedRegions, function( a ) {
+          return a !== this_region["short-name"];
+        });
+        tempSelectedRegions = new Array();
+        tempSelectedRegions = temRegions;
+        $(".regions-selected-container ul").find("li[vid='" + this_region["short-name"] + "']").remove();
+        this.setAttribute("selected","false");
+        this.style.fill = "#333333";
+    }
 }
 function btnEvents(){
     var filter_open = false;
@@ -167,5 +206,22 @@ function btnEvents(){
     $(".filter-card-big .btn-close").click(function(){
         filter_open.find(".filter-card-big").fadeOut(200);
         $(".body-hide-popup").hide();
+        tempSelectedRegions = new Array();
+        $(".regions-selected-container ul").html("");
+        $.each(selectedRegions, function(i,e){
+            var this_region = getObjects(regions, "short-name", e)[0];
+            $(".regions-selected-container ul").append("<li class='region-selected' vid='" + this_region["short-name"] + "'>" + this_region["name-real"] + "</li>");            
+        });
+        cleanMap("filter-map");
+        hidhlightRegions("filter-map", selectedRegions);
+    });
+    $(".filter-card-big .btn-check").click(function(){
+        filter_open.find(".filter-card-big").fadeOut(200);
+        $(".body-hide-popup").hide();
+        selectedRegions = tempSelectedRegions;
+        cleanMap("filter-map");
+        hidhlightRegions("filter-map", selectedRegions);
+        cleanMap("filter-map-small");
+        hidhlightRegions("filter-map-small", selectedRegions);
     });
 }
