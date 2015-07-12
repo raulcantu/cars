@@ -202,7 +202,7 @@ function btnEvents(){
         });
         filter_open = filter;
     });
-    $(".filter-card-big .btn-close").click(function(){
+    $("#filter-card-location .filter-card-big .btn-close").click(function(){
         filter_open.find(".filter-card-big").fadeOut(200);
         $(".body-hide-popup").hide();
         tempSelectedRegions = new Array();
@@ -215,7 +215,7 @@ function btnEvents(){
         hidhlightRegions("filter-map", selectedRegions);
         tempSelectedRegions = selectedRegions;
     });
-    $(".filter-card-big .btn-check").click(function(){
+    $("#filter-card-location .filter-card-big .btn-check").click(function(){
         filter_open.find(".filter-card-big").fadeOut(200);
         $(".body-hide-popup").hide();
         selectedRegions = tempSelectedRegions;
@@ -224,15 +224,15 @@ function btnEvents(){
         cleanMap("filter-map-small");
         hidhlightRegions("filter-map-small", selectedRegions);
         if(selectedRegions.length > 1){
-            $(".filter-card-small h4").html("Varios");
+            $("#filter-card-location .filter-card-small h4").html("Varios");
         }
         else {
             if(selectedRegions.length == 1){
                 var this_region = getObjects(regions, "short-name", selectedRegions[0])[0];
-                $(".filter-card-small h4").html(this_region["name-real"]);
+                $("#filter-card-location .filter-card-small h4").html(this_region["name-real"]);
             }
             else{
-                $(".filter-card-small h4").html("Seleccionar Region");
+                $("#filter-card-location .filter-card-small h4").html("Seleccionar Region");
             }
         }
     });
