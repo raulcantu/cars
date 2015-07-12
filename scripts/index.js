@@ -166,7 +166,6 @@ function hidhlightRegions(map, regions){
     }
 }
 function selectPath(e) {
-    console.log(this.id);
     var this_region = getObjects(regions, "short-name", this.id)[0];
     if($.inArray( this_region["short-name"], tempSelectedRegions ) < 0) //Regions unselected
     {
@@ -180,7 +179,7 @@ function selectPath(e) {
         temRegions = jQuery.grep(tempSelectedRegions, function( a ) {
           return a !== this_region["short-name"];
         });
-        tempSelectedRegions = new Array();
+        tempSelectedRegions = selectedRegions;
         tempSelectedRegions = temRegions;
         $(".regions-selected-container ul").find("li[vid='" + this_region["short-name"] + "']").remove();
         this.setAttribute("selected","false");
@@ -214,6 +213,7 @@ function btnEvents(){
         });
         cleanMap("filter-map");
         hidhlightRegions("filter-map", selectedRegions);
+        tempSelectedRegions = selectedRegions;
     });
     $(".filter-card-big .btn-check").click(function(){
         filter_open.find(".filter-card-big").fadeOut(200);
@@ -223,5 +223,17 @@ function btnEvents(){
         hidhlightRegions("filter-map", selectedRegions);
         cleanMap("filter-map-small");
         hidhlightRegions("filter-map-small", selectedRegions);
+        if(selectedRegions.length > 1){
+            $(".filter-card-small h4").html("Varios");
+        }
+        else {
+            if(selectedRegions.length == 1){
+                var this_region = getObjects(regions, "short-name", selectedRegions[0])[0];
+                $(".filter-card-small h4").html(this_region["name-real"]);
+            }
+            else{
+                $(".filter-card-small h4").html("Seleccionar Region");
+            }
+        }
     });
 }
