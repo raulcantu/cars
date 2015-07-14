@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Html.Action("_InitScript","Shared", new { initString = "Cars.Index.Init" })
+<main>
+    <section id="type">
+        <div class="container">
+            <div class="row type-card-container">
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="type-card" id="type-card-sedan">
+                        <span>Sedan</span>
+                        <i class="fa fa-car"></i>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="type-card" id="type-card-coupe">
+                        <span>Coupe</span>
+                        <i class="fa fa-car"></i>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="type-card" id="type-card-pick-up">
+                        <span>Pick-Up</span>
+                        <i class="fa fa-truck"></i>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="type-card" id="type-card-bike">
+                        <span>Moto</span>
+                        <i class="fa fa-motorcycle"></i>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="type-card" id="type-card-truck">
+                        <span>Cami&oacute;n</span>
+                        <i class="fa fa-truck"></i>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="type-card" id="type-card-acuatic">
+                        <span>Acu&aacute;tico</span>
+                        <i class="fa fa-ship"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-left col-xs-12 col-sm-12 col-md-12 col-lg-12 type-selected-container">
+                    <div>
+                        <i class="fa icon-type"></i>
+                        <h4></h4>
+                        <i class="fa fa-times-circle icon-close"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="filter">
+        <div class="container">
+            <div class="row filter-card-container">
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="filter-card" id="filter-card-location">
+                        <div class="filter-card-small">
+                            <h4>Seleccionar Estado</h4>
+                            <!--<svg class="icon" viewBox="0 0 200 200" >
+                                <use x="-800" y="-450" fill="green" xlink:href="data/Maps/MX.svg#CAM"></use>
+                            </svg>-->
+                            <object data="/Content/Data/Maps/MX/Map.svg" width="250" height="200" left="100" type="image/svg+xml" id="filter-map-small" ></object>
+                            <div class="btns-container">
+                                <div class="btn-div btn-edit" vid="filter-card-location">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card-big">
+                            <object data="/Content/Data/Maps/MX/Map.svg" width="500" height="320" type="image/svg+xml" id="filter-map"></object>
+                            <div class="regions-selected-container">
+                                <span class="regions-selected-title">Estados Seleccionados</span>
+                                <ul>
+                                        
+                                </ul>
+                            </div>
+                            <div class="btns-container">
+                                <div class="btn-div btn-close" vid="filter-card-model">
+                                    <i class="fa fa-close"></i>
+                                </div>
+                                <div class="btn-sep"></div>
+                                <div class="btn-div btn-check" vid="filter-card-model">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="filter-card" id="filter-card-make">
+                        <div class="filter-card-small">
+                            <h4>Seleccionar Marca</h4>
+                            <object data="data/Brands/ford_logo.svg" width="250" height="200" left="100" type="image/svg+xml" id="filter-make-small" ></object>
+                            <div class="btns-container">
+                                <div class="btn-div btn-edit" vid="filter-card-make">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card-big">
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="filter-card" id="filter-card-model">
+                        <div class="filter-card-small">
+                            <h4>Seleccionar Modelo</h4>
+                            <div class="btns-container">
+                                <div class="btn-div btn-edit" vid="filter-card-model">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card-big">
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="filter-card" id="filter-card-year">
+                        <div class="filter-card-small">
+                            <h4>Seleccionar A&ntilde;o</h4>
+                            <div class="btns-container">
+                                <div class="btn-div btn-edit" vid="filter-card-year">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card-big">
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+</main>

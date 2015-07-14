@@ -1,0 +1,22 @@
+{
+    "Regions": [
+        [
+            {
+                "name": "Campeche",
+                "name-real": "Campeche",
+                "short-name": "CAM",
+                "x": -800,
+                "y": -450
+            }
+        ],
+        [
+            {
+                "name": "Nuevo Leon",
+                "name-real": "Nuevo Le&oacute;n",
+                "short-name": "NLE",
+                "x": -460,
+                "y": -195
+            }
+        ]
+    ]
+}
