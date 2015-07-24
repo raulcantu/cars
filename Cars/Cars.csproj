@@ -237,6 +237,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\RobotoDraft.css" />
     <Content Include="Global.asax" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -247,6 +248,8 @@
     <Content Include="Images\grid-small-dot-icon.png" />
     <Content Include="Images\Icons\flamingo.ico" />
     <Content Include="Images\Logos\flamingo.png" />
+    <Content Include="Scripts\Cars.js" />
+    <Content Include="Scripts\Framework\namespace.js" />
     <Content Include="Scripts\Home\Index.js" />
     <Content Include="Scripts\Plugins\angular-animate.js" />
     <Content Include="Scripts\Plugins\angular-animate.min.js" />

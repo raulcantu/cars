@@ -1,6 +1,5 @@
-﻿
-namespace("Cars.Home");
-
+﻿namespace("Cars.Home");
+var app = angular.module("AppCars", []);
 Cars.Home.Index = (function ($, undefined) {
 
     function init() {

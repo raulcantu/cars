@@ -9,7 +9,18 @@ namespace Cars
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/Plugins/jquery-{version}.js"));
+                        "~/Scripts/Plugins/jquery-{version}.js",
+                        "~/Scripts/Framework/namespace.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular-material").Include(
+                        "~/Scripts/Plugins/angular.js",
+                        "~/Scripts/Plugins/angular-animate.js",
+                        "~/Scripts/Plugins/angular-aria.js",
+                        "~/Scripts/Plugins/angular-material.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/cars").Include(
+                        "~/Scripts/Cars.js",
+                        "~/Scripts/Home/Index.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/Plugins/jquery-ui-{version}.js"));
@@ -23,7 +34,11 @@ namespace Cars
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/Plugins/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/angular-material/angular-material.css",
+                        "~/Content/font-awesome.css",
+                        "~/fonts/RobotoDraft.css",
+                        "~/Content/Index.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

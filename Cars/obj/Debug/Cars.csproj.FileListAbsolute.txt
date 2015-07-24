@@ -41,3 +41,45 @@ c:\users\raúl\documents\visual studio 2012\Projects\Cars\Cars\bin\DotNetOpenAut
 c:\users\raúl\documents\visual studio 2012\Projects\Cars\Cars\obj\Debug\Cars.csprojResolveAssemblyReference.cache
 c:\users\raúl\documents\visual studio 2012\Projects\Cars\Cars\obj\Debug\Cars.dll
 c:\users\raúl\documents\visual studio 2012\Projects\Cars\Cars\obj\Debug\Cars.pdb
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Cars.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Cars.pdb
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Antlr3.Runtime.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.Core.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\EntityFramework.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Newtonsoft.Json.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.Helpers.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.Mvc.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.Optimization.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.Razor.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.WebPages.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.WebPages.Razor.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\WebGrease.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\WebMatrix.Data.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\WebMatrix.WebData.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\EntityFramework.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Newtonsoft.Json.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.Helpers.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.Mvc.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.Razor.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.WebPages.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\System.Web.WebPages.Razor.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\WebMatrix.Data.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\WebMatrix.WebData.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.Core.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Raúl\Documents\GitHub\cars\Cars\obj\Debug\Cars.dll
+C:\Users\Raúl\Documents\GitHub\cars\Cars\obj\Debug\Cars.pdb

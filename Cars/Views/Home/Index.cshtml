@@ -1,8 +1,36 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+
+    if (ViewBag.initString == null){
+        ViewBag.initString = new List<string>();
+    }
+    ViewBag.initString.Add("Cars.Home.Init");
 }
-@Html.Action("_InitScript","Shared", new { initString = "Cars.Index.Init" })
+<script type="text/javascript">
+
+    function AppCtrl() {
+        alert("HOLA");
+    }
+</script>
 <main>
+    <div ng-controller="AppCtrl">
+        <md-content class="md-padding">
+            <md-card>
+                <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                <md-card-content>
+                    <h2 class="md-title">Paracosm</h2>
+                    <p>
+                      The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                      two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                    </p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </div>
+            </md-card>
+        </md-content>
+    </div>
     <section id="type">
         <div class="container">
             <div class="row type-card-container">
@@ -95,7 +123,7 @@
                     <div class="filter-card" id="filter-card-make">
                         <div class="filter-card-small">
                             <h4>Seleccionar Marca</h4>
-                            <object data="data/Brands/ford_logo.svg" width="250" height="200" left="100" type="image/svg+xml" id="filter-make-small" ></object>
+                            <object data="/Content/Data/Brands/ford_logo.svg" width="250" height="200" left="100" type="image/svg+xml" id="filter-make-small" ></object>
                             <div class="btns-container">
                                 <div class="btn-div btn-edit" vid="filter-card-make">
                                     <i class="fa fa-pencil"></i>
