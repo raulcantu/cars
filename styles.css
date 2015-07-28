@@ -1,0 +1,9 @@
+.md-toolbar-tools h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: inherit;
+}
+.sidenav-option:not([disabled]):hover , .sidenav-option li:not([disabled]):hover {
+	cursor:pointer;
+	background-color:#E6E6E6;
+}
