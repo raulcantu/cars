@@ -1,0 +1,5 @@
+C:\Users\USER\Documents\GitHub\cars\Infrastructure2\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\GitHub\cars\Infrastructure2\bin\Debug\Infrastructure.dll
+C:\Users\USER\Documents\GitHub\cars\Infrastructure2\bin\Debug\Infrastructure.pdb
+C:\Users\USER\Documents\GitHub\cars\Infrastructure2\obj\Debug\Infrastructure.dll
+C:\Users\USER\Documents\GitHub\cars\Infrastructure2\obj\Debug\Infrastructure.pdb

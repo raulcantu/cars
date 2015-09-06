@@ -1,0 +1,7 @@
+C:\Users\USER\Documents\GitHub\cars\Model3\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\GitHub\cars\Model3\bin\Debug\Model.dll
+C:\Users\USER\Documents\GitHub\cars\Model3\bin\Debug\Model.pdb
+C:\Users\USER\Documents\GitHub\cars\Model3\bin\Debug\Infrastructure.dll
+C:\Users\USER\Documents\GitHub\cars\Model3\bin\Debug\Infrastructure.pdb
+C:\Users\USER\Documents\GitHub\cars\Model3\obj\Debug\Model.dll
+C:\Users\USER\Documents\GitHub\cars\Model3\obj\Debug\Model.pdb

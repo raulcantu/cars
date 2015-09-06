@@ -8,12 +8,13 @@
 }
 <script type="text/javascript">
 
-    function AppCtrl() {
-        alert("HOLA");
-    }
+    //function AppCtrl() {
+    //    alert("HOLA");
+    //}
+
 </script>
-<main>
-    <div ng-controller="AppCtrl">
+<main ng-app="home">
+   @* <div ng-controller="AppCtrl">
         <md-content class="md-padding">
             <md-card>
                 <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
@@ -30,47 +31,25 @@
                 </div>
             </md-card>
         </md-content>
-    </div>
+    </div>*@
     <section id="type">
+        <md-content class="md-padding" ng-controller="objectTypes" layout="row" layout-wrap>
+            <md-card ng-repeat="type in objects" flex="33">
+                <md-card-content class="type-card" id="type-card-{{type.class}}">
+                    <span>{{type.name}}</span>
+                    <i class="fa fa-{{type.icon}}"></i>
+                </md-card-content>
+            </md-card>
+        </md-content>
         <div class="container">
-            <div class="row type-card-container">
-                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="type-card" id="type-card-sedan">
-                        <span>Sedan</span>
-                        <i class="fa fa-car"></i>
+           @* <div class="row type-card-container" ng-controller="objectTypes">
+                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="type in objects">
+                    <div class="type-card" id="type-card-{{type.class}}">
+                        <span>{{type.name}}</span>
+                        <i class="fa fa-{{type.icon}}"></i>
                     </div>
                 </div>
-                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="type-card" id="type-card-coupe">
-                        <span>Coupe</span>
-                        <i class="fa fa-car"></i>
-                    </div>
-                </div>
-                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="type-card" id="type-card-pick-up">
-                        <span>Pick-Up</span>
-                        <i class="fa fa-truck"></i>
-                    </div>
-                </div>
-                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="type-card" id="type-card-bike">
-                        <span>Moto</span>
-                        <i class="fa fa-motorcycle"></i>
-                    </div>
-                </div>
-                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="type-card" id="type-card-truck">
-                        <span>Cami&oacute;n</span>
-                        <i class="fa fa-truck"></i>
-                    </div>
-                </div>
-                <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="type-card" id="type-card-acuatic">
-                        <span>Acu&aacute;tico</span>
-                        <i class="fa fa-ship"></i>
-                    </div>
-                </div>
-            </div>
+            </div>*@
             <div class="row">
                 <div class="text-left col-xs-12 col-sm-12 col-md-12 col-lg-12 type-selected-container">
                     <div>

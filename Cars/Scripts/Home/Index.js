@@ -1,6 +1,55 @@
 ﻿namespace("Cars.Home");
-var app = angular.module("AppCars", []);
+
 Cars.Home.Index = (function ($, undefined) {
+
+    var app = angular.module("home", []);
+
+    app.controller('objectTypes', function ($scope) {
+        $scope.objects = [
+            {
+                name: 'Sedán',
+                class: 'sedan',
+                icon: 'car'
+            },
+            {
+                name: 'Coupe',
+                class: 'coupe',
+                icon: 'car'
+            },
+            {
+                name: 'Pick-Up',
+                class: 'pick-up',
+                icon: 'truck'
+            },
+            {
+                name: 'Moto',
+                class: 'bike',
+                icon: 'motorcycle'
+            },
+            {
+                name: 'Camión',
+                class: 'truck',
+                icon: 'truck'
+            },
+            {
+                name: 'Acuático',
+                class: 'acuatic',
+                icon: 'ship'
+            }
+        ];
+    });
+
+    //home.directive('filterType', function () {
+    //    return {
+    //        restrict: 'E',
+    //        template: '<div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-3">' +
+    //                        '<div class="type-card" id="type-card-{{type.name}}">' +
+    //                            '<span>{{type.name}}</span>' +
+    //                            '<i class="fa fa-car"></i>' +
+    //                        '</div>' +
+    //                    '</div>'
+    //    };
+    //});
 
     function init() {
         //////VARIABLES//////
